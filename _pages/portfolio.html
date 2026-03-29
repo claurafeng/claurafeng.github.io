@@ -1,59 +1,207 @@
-<div class="project-card">
-  <img src="/images/500x300.png" alt="Project screenshot">
-  <div class="project-card-body">
-    <h3><a href="/portfolio/portfolio-1/">Your Project Title</a></h3>
-    <p>Short description of what the project does, what data you used, and what you found.</p>
-    <span class="tag">Python</span>
-    <span class="tag">scikit-learn</span>
+It looks like only the project card HTML got pasted in — the front matter, <style> block, TOC, and section headers are all missing. The file is incomplete.
+Here's what to do:
+
+Go to your _pages/portfolio.md on GitHub
+Click the pencil ✏️ icon to edit
+Press Ctrl+A (or Cmd+A on Mac) to select ALL the existing text
+Delete it all
+Then paste the full file content below:
+
+
+---
+layout: archive
+title: "Portfolio"
+permalink: /portfolio/
+author_profile: true
+---
+
+<style>
+.toc-box {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+  display: inline-block;
+  margin-bottom: 2rem;
+  background: #fafafa;
+}
+.toc-box p {
+  margin: 0 0 0.5rem 0;
+  font-weight: bold;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #555;
+}
+.toc-box ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.toc-box ul li {
+  margin: 0.3rem 0;
+}
+.toc-box ul li a {
+  text-decoration: none;
+  color: #52adc8;
+  font-size: 0.95em;
+}
+.toc-box ul li a:hover {
+  text-decoration: underline;
+  color: #1a7ea0;
+}
+.portfolio-category {
+  margin-top: 2.5rem;
+  padding-top: 0.5rem;
+  border-top: 2px solid #ddd;
+}
+.portfolio-category h2 {
+  margin-bottom: 0.2rem;
+}
+.category-desc {
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+.project-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+  background: #fff;
+}
+.project-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+.project-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+.project-card-body {
+  padding: 0.9rem 1rem;
+}
+.project-card-body h3 {
+  margin: 0 0 0.35rem 0;
+  font-size: 1em;
+}
+.project-card-body h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+.project-card-body h3 a:hover {
+  color: #52adc8;
+}
+.project-card-body p {
+  font-size: 0.85em;
+  color: #555;
+  margin: 0 0 0.6rem 0;
+  line-height: 1.5;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.75em;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: #e8f4fb;
+  color: #1a7ea0;
+  margin: 2px 2px 0 0;
+}
+</style>
+
+<div class="toc-box">
+  <p>Categories</p>
+  <ul>
+    <li><a href="#regression">Regression</a></li>
+    <li><a href="#classification">Classification</a></li>
+    <li><a href="#data-visualization">Data Visualization</a></li>
+    <li><a href="#nlp">NLP / Text Analysis</a></li>
+    <li><a href="#dashboards">Dashboards &amp; Reporting</a></li>
+  </ul>
+</div>
+
+<div class="portfolio-category" id="regression">
+  <h2>Regression</h2>
+  <p class="category-desc">Projects involving linear, logistic, or other regression-based modeling.</p>
+  <div class="project-grid">
+    <div class="project-card">
+      <img src="/images/500x300.png" alt="Project screenshot">
+      <div class="project-card-body">
+        <h3><a href="/portfolio/portfolio-1/">Your Project Title</a></h3>
+        <p>Short description of what the project does, what data you used, and what you found.</p>
+        <span class="tag">Python</span>
+        <span class="tag">scikit-learn</span>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- Copy and paste another project-card block here to add more projects -->
-
-<div class="project-card">
-  <img src="/images/500x300.png" alt="Project screenshot">
-  <div class="project-card-body">
-    <h3><a href="/portfolio/portfolio-2/">Your Project Title</a></h3>
-    <p>Short description of what the project does, what data you used, and what you found.</p>
-    <span class="tag">Python</span>
-    <span class="tag">XGBoost</span>
+<div class="portfolio-category" id="classification">
+  <h2>Classification</h2>
+  <p class="category-desc">Projects using classification algorithms to predict categories or labels.</p>
+  <div class="project-grid">
+    <div class="project-card">
+      <img src="/images/500x300.png" alt="Project screenshot">
+      <div class="project-card-body">
+        <h3><a href="/portfolio/portfolio-2/">Your Project Title</a></h3>
+        <p>Short description of what the project does, what data you used, and what you found.</p>
+        <span class="tag">Python</span>
+        <span class="tag">XGBoost</span>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- Copy and paste another project-card block here to add more projects -->
-
-<div class="project-card">
-  <img src="/images/500x300.png" alt="Project screenshot">
-  <div class="project-card-body">
-    <h3><a href="#">Your Project Title</a></h3>
-    <p>Short description of what the project does, what data you used, and what you found.</p>
-    <span class="tag">Tableau</span>
-    <span class="tag">Matplotlib</span>
+<div class="portfolio-category" id="data-visualization">
+  <h2>Data Visualization</h2>
+  <p class="category-desc">Projects focused on making data visually compelling and easy to understand.</p>
+  <div class="project-grid">
+    <div class="project-card">
+      <img src="/images/500x300.png" alt="Project screenshot">
+      <div class="project-card-body">
+        <h3><a href="#">Your Project Title</a></h3>
+        <p>Short description of what the project does, what data you used, and what you found.</p>
+        <span class="tag">Tableau</span>
+        <span class="tag">Matplotlib</span>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- Copy and paste another project-card block here to add more projects -->
-
-<div class="project-card">
-  <img src="/images/500x300.png" alt="Project screenshot">
-  <div class="project-card-body">
-    <h3><a href="#">Your Project Title</a></h3>
-    <p>Short description of what the project does, what data you used, and what you found.</p>
-    <span class="tag">NLTK</span>
-    <span class="tag">spaCy</span>
+<div class="portfolio-category" id="nlp">
+  <h2>NLP / Text Analysis</h2>
+  <p class="category-desc">Projects that extract insights from text data using natural language processing.</p>
+  <div class="project-grid">
+    <div class="project-card">
+      <img src="/images/500x300.png" alt="Project screenshot">
+      <div class="project-card-body">
+        <h3><a href="#">Your Project Title</a></h3>
+        <p>Short description of what the project does, what data you used, and what you found.</p>
+        <span class="tag">NLTK</span>
+        <span class="tag">spaCy</span>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- Copy and paste another project-card block here to add more projects -->
-
-<div class="project-card">
-  <img src="/images/500x300.png" alt="Project screenshot">
-  <div class="project-card-body">
-    <h3><a href="#">Your Project Title</a></h3>
-    <p>Short description of what the project does, what data you used, and what you found.</p>
-    <span class="tag">Power BI</span>
-    <span class="tag">SQL</span>
+<div class="portfolio-category" id="dashboards">
+  <h2>Dashboards &amp; Reporting</h2>
+  <p class="category-desc">Interactive dashboards and automated reports built for business decision-making.</p>
+  <div class="project-grid">
+    <div class="project-card">
+      <img src="/images/500x300.png" alt="Project screenshot">
+      <div class="project-card-body">
+        <h3><a href="#">Your Project Title</a></h3>
+        <p>Short description of what the project does, what data you used, and what you found.</p>
+        <span class="tag">Power BI</span>
+        <span class="tag">SQL</span>
+      </div>
+    </div>
   </div>
 </div>
-
-<!-- Copy and paste another project-card block here to add more projects -->
