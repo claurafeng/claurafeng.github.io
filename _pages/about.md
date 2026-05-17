@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Sophomore studying at New York University Stern School of Business with concentrations in Finance and Computing & Data Science and a minor in creative writing.
+Rising Junior studying at New York University Stern School of Business with concentrations in Computing & Data Science and Management & Organizations.
 
 
 About Me
