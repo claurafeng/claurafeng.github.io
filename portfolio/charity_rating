@@ -5,36 +5,4 @@ layout: single
 author_profile: true
 ---
 
-## Overview
-
-This report analyzes a dataset of 298 charities to examine how transparency-related
-metrics relate to overall charity scores.
-
-## Research Questions
-
-1. How does a charity's **Accountability & Transparency score** relate to its overall rating?
-2. Does making **audited financial statements** publicly available affect overall scores?
-
-## Key Findings
-
-**Finding 1 — Accountability & Transparency Score**
-- Correlation (r): **0.707** — strong positive
-- p-value: < 2.2e-16 — statistically significant
-- Charities with higher A&T scores consistently earn higher overall ratings.
-
-**Finding 2 — Audited Financial Statement Availability**
-- Correlation (r): **0.421** — moderate positive
-- p-value: 3.546e-14 — statistically significant
-- Charities that post financials online tend to score higher.
-
-## Conclusion
-
-Both transparency measures positively predict overall scores, with A&T score being
-the stronger predictor of the two.
-
-## Files
-
-- [📄 Full Report](/files/Claura_Feng_Homework_1.docx)
-- [📊 Dataset](/files/Charities.xlsx)
-
-**Course:** Regression & Multivariate Data Analysis · February 2026
+  <h2>NLP / Text Analysis</h2>
