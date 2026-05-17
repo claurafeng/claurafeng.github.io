@@ -12,7 +12,7 @@ site_theme               : "default"
 title                    : "Claura Feng"
 title_separator          : "-"
 name                     : &name "Claura Feng"
-description              : &description "Sophomore at New York University"
+description              : &description "Rising Junior at New York University"
 url                      : https://claurafeng.github.io
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "claurafeng.github.io"
@@ -24,11 +24,11 @@ author:
   # Biographic information
   avatar           : "Claura Feng Headshot.jpg"
   name             : "Claura Feng"
-  bio              : "Aspiring Business Analyst"
+  bio              : "Aspiring Business Consultant"
   location         : "New York, NY"
   #employer         : "Red Brick University"
   uri              : # URL
-  email            : "claurafeng2@gmail.com" 
+  email            : "claura.feng@stern.nyu.edu" 
 
   # Academic websites
   academia         : # URL
