@@ -161,9 +161,9 @@ author_profile: true
 
 ---
 
-<div class="section-block"><h2>📋 Overview</h2></div>
+<div class="section-block"><h2>Overview</h2></div>
 
-This project examines the relationship between a charity's **overall score** and two transparency-related variables: its **accountability & transparency score** and whether it **provides audited financial statements** on its website. Data were sourced from [charitynavigator.org](https://charitynavigator.org) and analyzed using RStudio.
+This project focuses on a dataset used to depict various characteristics of 298 charities, including their overall score, accountability & transparency score, whether their audited financial statements are easily accessible, revenues & expenses, and more from [charitynavigator.org](https://charitynavigator.org). Specifically, two relationships will be scrutinized using RStudio: the charities’ **overall score** and rating with **accountability & transparency score** as well as the charities’ overall score and whether they **provide audited financial statements** on their website. These findings will identify how the charities’ perceived transparency affects their overall scores.
 
 Two questions guided the analysis:
 1. Is there a significant relationship between a charity's overall rating and its accountability & transparency score?
@@ -171,7 +171,7 @@ Two questions guided the analysis:
 
 ---
 
-<div class="section-block"><h2>📦 Data</h2></div>
+<div class="section-block"><h2>Data</h2></div>
 
 The dataset contains information on **298 charities** from Charity Navigator. The three variables used in this analysis are:
 
@@ -212,7 +212,7 @@ The dataset contains information on **298 charities** from Charity Navigator. Th
 
 ---
 
-<div class="section-block"><h2>🧪 Step-by-Step Analysis in R</h2></div>
+<div class="section-block"><h2>Step-by-Step Analysis in R</h2></div>
 
 <div class="step-list">
 
@@ -293,7 +293,7 @@ charity$AF_label &lt;- <span class="fn">factor</span>(charity$AF,
 
 ---
 
-<div class="section-block"><h2>📊 Results</h2></div>
+<div class="section-block"><h2>Results</h2></div>
 
 <div class="stats-grid">
   <div class="stat-card">
@@ -326,6 +326,6 @@ charity$AF_label &lt;- <span class="fn">factor</span>(charity$AF,
 
 ---
 
-<div class="section-block"><h2>✅ Summary</h2></div>
+<div class="section-block"><h2>Summary</h2></div>
 
 Both analyses found statistically significant, positive relationships between a charity's overall score and its transparency-related measures. The accountability & transparency score had a **stronger** correlation with overall score (r = 0.707) than the provision of audited financial statements (r = 0.421), suggesting that quantitative transparency scores are a stronger predictor of overall performance than the binary presence of financial documentation alone.
