@@ -153,6 +153,7 @@ author_profile: true
 
 <div class="project-meta">
   <span class="badge badge-blue">R / RStudio</span>
+  <span class="badge badge-blue">Scatterplot</span>
   <span class="badge badge-blue">Correlation Analysis</span>
   <span class="badge badge-gray">298 observations</span>
   <span class="badge badge-gray">charitynavigator.org</span>
