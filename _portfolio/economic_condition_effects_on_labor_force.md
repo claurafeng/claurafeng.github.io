@@ -180,7 +180,7 @@ The dataset contains employment information on **46 years** (1980-2025) from the
   <tbody>
     <tr>
       <td>Year</td>
-      <td><code>OS</code></td>
+      <td>Year</td>
       <td>Numeric (discrete)</td>
       <td>Year in which the data was recorded</td>
     </tr>
@@ -192,7 +192,7 @@ The dataset contains employment information on **46 years** (1980-2025) from the
     </tr>
     <tr>
       <td>Civilian Unemployment Rate</td>
-      <td><code>CUNR</code></td>
+      <td>CUNR</td>
       <td>Numeric (continuous)</td>
       <td>Percentage of the labor force that is unemployed</td>
     </tr>
