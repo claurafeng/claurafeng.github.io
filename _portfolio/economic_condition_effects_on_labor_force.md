@@ -153,10 +153,13 @@ author_profile: true
 
 <div class="project-meta">
   <span class="badge badge-blue">R / RStudio</span>
+  <span class="badge badge-blue">Histogram</span>
   <span class="badge badge-blue">Scatterplot</span>
   <span class="badge badge-blue">Correlation Analysis</span>
-  <span class="badge badge-gray">298 observations</span>
-  <span class="badge badge-gray">charitynavigator.org</span>
+  <span class="badge badge-blue">Simple Regression</span>
+  <span class="badge badge-blue">Residual Analyses</span>
+  <span class="badge badge-gray">46 observations</span>
+  <span class="badge badge-gray">Federal Reserve Bank of St. Louis</span>
 </div>
 
 ---
