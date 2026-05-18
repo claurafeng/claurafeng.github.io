@@ -163,13 +163,15 @@ author_profile: true
 
 <div class="section-block"><h2>Overview</h2></div>
 
-This project analyzes how economic conditions (measured using the civilian unemployment rate from the [Federal Reserve Bank of St. Louis](https://fred.stlouisfed.org/series/UNRATE)) can predict the percentage of people who join the labor force (measured by the labor force participation rate from the [Federal Reserve Bank of St. Louis](https://fred.stlouisfed.org/series/CIVPART))) in the United States from 1980-2025. The analysis would reveal which one of two different economic theories (discouraged worker effect and added worker effect) is better supported by the employment data through a regression to predict and quantify the relationship. When looking at the relationship holistically in regards to time period, no statistically significant relationship emerged. Thus, the full period will be split into **two eras** (1980-2008 and 2009-2025) to conduct the regression. In the end, a residual analysis would be conducted to test whether the regression model is appropriate and identify outliers. The data consists of three variables: **year**, **labor force participation rate (CLFPR)**, and **unemployment rate (CUNR)**.
+This project analyzes how economic conditions (measured using the civilian unemployment rate from the [Federal Reserve Bank of St. Louis](https://fred.stlouisfed.org/series/UNRATE)) can predict the percentage of people who join the labor force (measured by the labor force participation rate from the [Federal Reserve Bank of St. Louis](https://fred.stlouisfed.org/series/CIVPART))) in the United States from 1980-2025. The analysis would reveal which one of two different economic theories (discouraged worker effect and added worker effect) is better supported by the employment data through a regression to predict and quantify the relationship.
+
+When looking at the relationship holistically in regards to time period, no statistically significant relationship emerged. Thus, the full period will be split into **two eras** (1980-2008 and 2009-2025) to conduct the regression. In the end, a residual analysis would be conducted to test whether the regression model is appropriate and identify outliers. The data consists of three variables: **year**, **labor force participation rate (CLFPR)**, and **unemployment rate (CUNR)**.
 
 ---
 
 <div class="section-block"><h2>Data</h2></div>
 
-The dataset contains information on **298 charities** from Charity Navigator. The three variables used in this analysis are:
+The dataset contains employment information on **46 years** (1980-2025) from the Federal Reserve Bank of St. Louis. The three variables used in this analysis are:
 
 <table class="var-table">
   <thead>
