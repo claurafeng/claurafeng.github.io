@@ -165,10 +165,6 @@ author_profile: true
 
 This project analyzes how economic conditions (measured using the civilian unemployment rate from the [Federal Reserve Bank of St. Louis](https://fred.stlouisfed.org/series/UNRATE)) can predict the percentage of people who join the labor force (measured by the labor force participation rate from the [Federal Reserve Bank of St. Louis](https://fred.stlouisfed.org/series/CIVPART))) in the United States from 1980-2025. The analysis would reveal which one of two different economic theories (discouraged worker effect and added worker effect) is better supported by the employment data through a regression to predict and quantify the relationship. When looking at the relationship holistically in regards to time period, no statistically significant relationship emerged. Thus, the full period will be split into **two eras** (1980-2008 and 2009-2025) to conduct the regression. In the end, a residual analysis would be conducted to test whether the regression model is appropriate and identify outliers. The data consists of three variables: **year**, **labor force participation rate (CLFPR)**, and **unemployment rate (CUNR)**.
 
-Two questions guided the analysis:
-1. Is there a significant relationship between a charity's overall rating and its accountability & transparency score?
-2. Is there a significant relationship between a charity's overall rating and whether audited financial statements are accessible on its website?
-
 ---
 
 <div class="section-block"><h2>Data</h2></div>
@@ -177,26 +173,26 @@ The dataset contains information on **298 charities** from Charity Navigator. Th
 
 <table class="var-table">
   <thead>
-    <tr><th>Variable</th><th>Code</th><th>Type</th><th>Description</th></tr>
+    <tr><th>Variable</th><th>Abbreviation</th><th>Type</th><th>Description</th></tr>
   </thead>
   <tbody>
     <tr>
-      <td>Overall Score</td>
+      <td>Year</td>
       <td><code>OS</code></td>
-      <td>Numeric (continuous)</td>
-      <td>A charity's overall rating on Charity Navigator</td>
+      <td>Numeric (discrete)</td>
+      <td>Year in which the data was recorded</td>
     </tr>
     <tr>
-      <td>Accountability & Transparency Score</td>
-      <td><code>ATS</code></td>
+      <td>Civilian Labor Force Participation Rate</td>
+      <td>CLFPR</td>
       <td>Numeric (continuous)</td>
-      <td>Score measuring how accountable and transparent a charity is</td>
+      <td>Percentage of the population that is either working or actively looking for work</td>
     </tr>
     <tr>
-      <td>Audited Financial Statements</td>
-      <td><code>AF</code></td>
-      <td>Binary (0 = No, 1 = Yes)</td>
-      <td>Whether the charity provides audited financial statements on its website</td>
+      <td>Civilian Unemployment Rate</td>
+      <td><code>CUNR</code></td>
+      <td>Numeric (continuous)</td>
+      <td>Percentage of the labor force that is unemployed</td>
     </tr>
   </tbody>
 </table>
@@ -204,10 +200,10 @@ The dataset contains information on **298 charities** from Charity Navigator. Th
 <div class="dataset-box">
   <span class="ds-icon">📄</span>
   <div class="ds-text">
-    <strong>Charity Navigator Dataset (.csv)</strong>
-    <span>298 charities · sourced from charitynavigator.org</span>
+    <strong>Employment Dataset (.csv)</strong>
+    <span>years 1980-2025 · sourced from Federal Reserve Bank of St. Louis</span>
   </div>
-  <a class="ds-btn" href="https://docs.google.com/spreadsheets/d/1NNMi5_pkGSOgmYnffXXaMAUS8CE3luewkyzk2sdZzFU/edit?gid=583913579#gid=583913579" target="_blank">View Dataset →</a>
+  <a class="ds-btn" href="(https://docs.google.com/spreadsheets/d/1KMYsLpdXuXHFCHlSGkyiei_idV9minj4bWV-vmCqolo/edit?gid=0#gid=0)" target="_blank">View Dataset →</a>
 </div>
 
 ---
