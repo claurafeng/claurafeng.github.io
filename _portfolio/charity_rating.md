@@ -177,24 +177,24 @@ The dataset contains information on **298 charities** from Charity Navigator. Th
 
 <table class="var-table">
   <thead>
-    <tr><th>Variable</th><th>Code</th><th>Type</th><th>Description</th></tr>
+    <tr><th>Variable</th><th>Abbreviation</th><th>Type</th><th>Description</th></tr>
   </thead>
   <tbody>
     <tr>
       <td>Overall Score</td>
-      <td><code>OS</code></td>
+      <td>OS</td>
       <td>Numeric (continuous)</td>
       <td>A charity's overall rating on Charity Navigator</td>
     </tr>
     <tr>
       <td>Accountability & Transparency Score</td>
-      <td><code>ATS</code></td>
+      <td>ATS</td>
       <td>Numeric (continuous)</td>
       <td>Score measuring how accountable and transparent a charity is</td>
     </tr>
     <tr>
       <td>Audited Financial Statements</td>
-      <td><code>AF</code></td>
+      <td>AF</td>
       <td>Binary (0 = No, 1 = Yes)</td>
       <td>Whether the charity provides audited financial statements on its website</td>
     </tr>
