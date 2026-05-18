@@ -240,8 +240,11 @@ charity &lt;- <span class="fn">read.csv</span>(<span class="string">"charities.c
         <span class="fn">geom_point</span>(color = "red", alpha = 0.7) +
         <span class="fn">labs</span>(title = <span class="string">"Relationship Between Overall Score and Accounting &amp; Transparency Score"</span>, x = <span class="string">"Accounting &amp; Transparency Score"</span>, y = <span class="string">"Overall Score"</span>) +
         <span class="fn">theme_minimal</span>()
-        print(charities_ats_plot)
+        <span class="fn">print</span>(charities_ats_plot)
      </pre>
+      <img src="/images/charities_ats_scatterplot.png" alt="Scatterplot of Overall Score vs ATS" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+      <p>The graph shows the relationship between the charities’ overall rating and accountability & transparency score. There is no simple curve that gives the points a better fit, meaning that a linear model is appropriate. The graph shows a strong, positive correlation. Thus, charities with relatively high accountability & transparency scores tend to have higher overall ratings as well.
+</p>
     </div>
   </div>
 
