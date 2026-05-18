@@ -222,11 +222,11 @@ The dataset contains information on **298 charities** from Charity Navigator. Th
       <h4>Import the data</h4>
       <p>Load the CSV file into RStudio and preview the structure.</p>
       <pre><span class="comment"># Import data from CSV</span>
-charity &lt;- <span class="fn">read.csv</span>(<span class="string">"charity_data.csv"</span>)
+charity &lt;- <span class="fn">read.csv</span>(<span class="string">"charities.csv"</span>)
 
-<span class="comment"># Preview the first few rows</span>
-<span class="fn">head</span>(charity)
-<span class="fn">str</span>(charity)</pre>
+<span class="comment"># Install ggplot2 package</span>
+<span class="fn">install.packages</span>("ggplot2")
+<span class="fn">library</span>("ggplot2")</pre>
     </div>
   </div>
 
@@ -236,12 +236,12 @@ charity &lt;- <span class="fn">read.csv</span>(<span class="string">"charity_dat
       <h4>Scatterplot: Overall Score vs. Accountability & Transparency Score</h4>
       <p>Visualize the relationship between OS and ATS to check for outliers and non-linearity before running a correlation.</p>
       <pre><span class="comment"># Scatterplot: OS vs ATS</span>
-<span class="fn">plot</span>(charity$ATS, charity$OS,
-     main = <span class="string">"Overall Score vs. Accountability &amp; Transparency Score"</span>,
-     xlab = <span class="string">"Accountability &amp; Transparency Score"</span>,
-     ylab = <span class="string">"Overall Score"</span>,
-     pch  = 19,
-     col  = <span class="string">"steelblue"</span>)</pre>
+<span class="fn">ggplot</span>(charities_ats_plot, <span class="fn">aes</span>(x = ATS, y = OS)) +
+        <span class="fn">geom_point</span>(color = "red", alpha = 0.7) +
+        <span class="fn">labs</span>(title = <span class="string">"Relationship Between Overall Score and Accounting &amp; Transparency Score"</span>, x = <span class="string">"Accounting &amp; Transparency Score"</span>, y = <span class="string">"Overall Score"</span>) +
+        <span class="fn">theme_minimal</span>()
+        print(charities_ats_plot)
+     </pre>
     </div>
   </div>
 
