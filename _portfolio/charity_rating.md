@@ -1,5 +1,5 @@
 ---
-title: "Charity Transparency & Overall Ratings"
+title: "Charity Transparency Effect on Overall Ratings"
 permalink: /portfolio/charity_rating/
 layout: single
 author_profile: true
