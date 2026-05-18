@@ -1,5 +1,5 @@
 ---
-title: "Charity Transparency & Overall Ratings"
+title: "Effects of Economic Conditions on Labor Force Partcipation"
 permalink: /portfolio/economic_condition_effects_on_labor_force/
 layout: single
 author_profile: true
@@ -163,7 +163,7 @@ author_profile: true
 
 <div class="section-block"><h2>Overview</h2></div>
 
-This project focuses on a dataset used to depict various characteristics of 298 charities, including their overall score, accountability & transparency score, whether their audited financial statements are easily accessible, revenues & expenses, and more from [charitynavigator.org](https://charitynavigator.org). Specifically, two relationships will be scrutinized using RStudio: the charities’ **overall score** and rating with **accountability & transparency score** as well as the charities’ overall score and whether they **provide audited financial statements** on their website. These findings will identify how the charities’ perceived transparency affects their overall scores.
+This project analyzes how economic conditions (measured using the civilian unemployment rate from the [Federal Reserve Bank of St. Louis](https://fred.stlouisfed.org/series/UNRATE)) can predict the percentage of people who join the labor force (measured by the labor force participation rate from the [Federal Reserve Bank of St. Louis](https://fred.stlouisfed.org/series/CIVPART))) in the United States from 1980-2025. The analysis would reveal which one of two different economic theories (discouraged worker effect and added worker effect) is better supported by the employment data through a regression to predict and quantify the relationship. When looking at the relationship holistically in regards to time period, no statistically significant relationship emerged. Thus, the full period will be split into **two eras** (1980-2008 and 2009-2025) to conduct the regression. In the end, a residual analysis would be conducted to test whether the regression model is appropriate and identify outliers. The data consists of three variables: **year**, **labor force participation rate (CLFPR)**, and **unemployment rate (CUNR)**.
 
 Two questions guided the analysis:
 1. Is there a significant relationship between a charity's overall rating and its accountability & transparency score?
