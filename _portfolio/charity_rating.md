@@ -222,7 +222,7 @@ The dataset contains information on **298 charities** from Charity Navigator. Th
       <h4>Import the data</h4>
       <p>Load the CSV file into RStudio and preview the structure.</p>
       <pre><span class="comment"># Import data from CSV</span>
-charity &lt;- <span class="fn">read.csv</span>(<span class="string">"charities.csv"</span>)
+charities &lt;- <span class="fn">read.csv</span>(<span class="string">"charities.csv"</span>)
 
 <span class="comment"># Install ggplot2 package</span>
 <span class="fn">install.packages</span>("ggplot2")
@@ -236,7 +236,7 @@ charity &lt;- <span class="fn">read.csv</span>(<span class="string">"charities.c
       <h4>Scatterplot: Overall Score vs. Accountability & Transparency Score</h4>
       <p>Visualize the relationship between OS and ATS to check for outliers and non-linearity before running a correlation.</p>
       <pre><span class="comment"># Scatterplot: OS vs ATS</span>
-<span class="fn">ggplot</span>(charities_ats_plot, <span class="fn">aes</span>(x = ATS, y = OS)) +
+charities_ats_plot &lt;- <span class="fn">ggplot</span>(charities, <span class="fn">aes</span>(x = ATS, y = OS)) +
         <span class="fn">geom_point</span>(color = "red", alpha = 0.7) +
         <span class="fn">labs</span>(title = <span class="string">"Relationship Between Overall Score and Accounting &amp; Transparency Score"</span>, x = <span class="string">"Accounting &amp; Transparency Score"</span>, y = <span class="string">"Overall Score"</span>) +
         <span class="fn">theme_minimal</span>()
@@ -254,21 +254,20 @@ charity &lt;- <span class="fn">read.csv</span>(<span class="string">"charities.c
       <h4>Scatterplot: Overall Score vs. Audited Financial Statements</h4>
       <p>For the binary AF variable, the x-axis labels are converted from 0/1 to "No"/"Yes" for clarity.</p>
       <pre><span class="comment"># Convert AF to a labeled factor</span>
-charity$AF_label &lt;- <span class="fn">factor</span>(charity$AF,
+charities$AF_label &lt;- <span class="fn">factor</span>(charities$AF,
                             levels = <span class="fn">c</span>(0, 1),
                             labels = <span class="fn">c</span>(<span class="string">"No"</span>, <span class="string">"Yes"</span>))
 
 <span class="comment"># Scatterplot: OS vs AF with labeled axis</span>
-<span class="fn">plot</span>(<span class="fn">as.numeric</span>(charity$AF_label), charity$OS,
-     main  = <span class="string">"Overall Score vs. Audited Financial Statements"</span>,
-     xlab  = <span class="string">"Audited Financial Statements on Website"</span>,
-     ylab  = <span class="string">"Overall Score"</span>,
-     xaxt  = <span class="string">"n"</span>,
-     pch   = 19,
-     col   = <span class="string">"steelblue"</span>)
-
-<span class="comment"># Add custom x-axis labels</span>
-<span class="fn">axis</span>(1, at = <span class="fn">c</span>(1, 2), labels = <span class="fn">c</span>(<span class="string">"No"</span>, <span class="string">"Yes"</span>))</pre>
+charities_af_plot &lt;- <span class="fn">ggplot</span>(charities, <span class="fn">aes</span>(x = AF_label, y = OS)) +
+<span class="fn">geom_point</span>(color = "blue", alpha = 0.7) +
+<span class="fn">labs</span>(title = <span class="string">"Relationship Between Overall Score and Audited Financial Statement Provision"</span>, x = <span class="string">"Audited Financial Statement Provision"</span>, y = <span class="string">"Overall Score"</span>) +
+<span class="fn">theme_minimal</span>()
+<span class="fn">print</span>(charities_af_plot)     
+</pre>
+      <img src="/images/charities_af_plot.png" alt="Scatterplot of Overall Score vs AF" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+      <p>The graph shows the relationship between the charities’ overall rating and whether they provided the audited financial statement on their website. Since no simple curves can be discerned from the scatterplot, a linear model is appropriate. The center of the line representing charities that provide audited financial statements on their websites seems to be higher than the center of the line of charities that do not provide them. This moderately indicates that charities with audited financial statements accessible on their website tend to have higher overall ratings as well, suggesting a positive correlation between the two.
+</p>
     </div>
   </div>
 
@@ -278,7 +277,7 @@ charity$AF_label &lt;- <span class="fn">factor</span>(charity$AF,
       <h4>Correlation test: OS and ATS</h4>
       <p>Run a Pearson correlation to get the r statistic and p-value for the OS–ATS relationship.</p>
       <pre><span class="comment"># Pearson correlation: OS vs ATS</span>
-<span class="fn">cor.test</span>(charity$OS, charity$ATS, method = <span class="string">"pearson"</span>)</pre>
+<span class="fn">cor.test</span>(charities$OS, charities$ATS, method = <span class="string">"pearson"</span>)</pre>
     </div>
   </div>
 
@@ -286,9 +285,9 @@ charity$AF_label &lt;- <span class="fn">factor</span>(charity$AF,
     <div class="step-num">5</div>
     <div class="step-content">
       <h4>Correlation test: OS and AF</h4>
-      <p>Run a Pearson correlation for the OS–AF (binary) relationship.</p>
+      <p>Run a Pearson correlation to get the r statistic and p-value for the OS–AF relationship.</p>
       <pre><span class="comment"># Pearson correlation: OS vs AF</span>
-<span class="fn">cor.test</span>(charity$OS, charity$AF, method = <span class="string">"pearson"</span>)</pre>
+<span class="fn">cor.test</span>(charities$OS, charities$AF, method = <span class="string">"pearson"</span>)</pre>
     </div>
   </div>
 
@@ -304,31 +303,36 @@ charity$AF_label &lt;- <span class="fn">factor</span>(charity$AF,
     <span class="stat-label">OS × ATS Correlation</span>
   </div>
   <div class="stat-card">
-    <span class="stat-value">r = 0.421</span>
-    <span class="stat-label">OS × AF Correlation</span>
-  </div>
-  <div class="stat-card">
     <span class="stat-value">p &lt; 2.2e-16</span>
     <span class="stat-label">OS × ATS p-value</span>
-  </div>
-  <div class="stat-card">
-    <span class="stat-value">p = 3.55e-14</span>
-    <span class="stat-label">OS × AF p-value</span>
   </div>
 </div>
 
 <div class="finding-box">
   <h4>Overall Score & Accountability / Transparency Score</h4>
-  <p>The correlation of <strong>r = 0.707</strong> indicates a <strong>strong positive</strong> relationship (Cohen's scale: r > 0.5). The result is statistically significant (p &lt; 2.2e-16). Charities with higher accountability & transparency scores tend to have higher overall ratings.</p>
+  <p>The correlation statistic and p-value suggest that the relationship between the charities’ overall rating and accountability & transparency score has a strong positive correlation and is statistically significant. The p-value (less than 2.2e-16) is less than 0.05, indicating that the relationship is statistically significant. This means that the correlation is likely not due to random chance. The correlation (r), which is 0.707, is greater than 0.5, which means that there is a strong positive correlation between the two variables. The statistically significant, strongly positive correlation suggests that charities with higher accountability & transparency scores tend to also have higher overall ratings.
+</p>
 </div>
+
+<div class="stats-grid">
+  <div class="stat-card">
+    <span class="stat-value">r = 0.421</span>
+    <span class="stat-label">OS × AF Correlation</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">p = 3.55e-14</span>
+    <span class="stat-label">OS × AF p-value</span>
+  </div>
+  </div>
 
 <div class="finding-box green">
   <h4>Overall Score & Audited Financial Statements</h4>
-  <p>The correlation of <strong>r = 0.421</strong> indicates a <strong>moderate positive</strong> relationship (Cohen's scale: 0.3 &lt; r &lt; 0.5). The result is statistically significant (p = 3.55e-14). Charities providing audited statements on their website tend to have higher overall scores.</p>
+  <p>The correlation statistic for the relationship between the charities’ overall rating and whether they provided the audited financial statement on their website indicates a statistically significant, moderately positive correlation between the two. The p-value (3.546e-14) is less than 0.05, indicating that the relationship is statistically significant. This means that the correlation is likely not due to random chance. The correlation (r), which is 0.421, is between 0.3 and 0.5, which means that there is a moderate positive correlation between the two variables. The moderately positive, statistically significant correlation between the charities’ overall rating and audited financial statement provision shows that charities that provide an audited financial statement on their website tend to have higher overall scores.
+</p>
 </div>
 
 ---
 
 <div class="section-block"><h2>Summary</h2></div>
 
-Both analyses found statistically significant, positive relationships between a charity's overall score and its transparency-related measures. The accountability & transparency score had a **stronger** correlation with overall score (r = 0.707) than the provision of audited financial statements (r = 0.421), suggesting that quantitative transparency scores are a stronger predictor of overall performance than the binary presence of financial documentation alone.
+	To sum up the findings, charities perceived to be more transparent with their operations (through their accountability & transparency scores and accessibility of their audited financial statement on their website) tend to have a **higher** overall score as well. Although both are positively correlated, the correlation between the charities’ overall rating and accountability & transparency score is **stronger** than the correlation between their overall rating and whether they provided the financial statements on their website.
