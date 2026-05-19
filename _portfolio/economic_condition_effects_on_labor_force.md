@@ -221,9 +221,9 @@ The dataset contains employment information on **46 years** (1980-2025) from the
     <div class="step-num">1</div>
     <div class="step-content">
       <h4>Import the data</h4>
-      <p>Load the CSV file into RStudio and preview the structure.</p>
+      <p>Load the CSV file into RStudio and install relevant package.</p>
       <pre><span class="comment"># Import data from CSV</span>
-charities &lt;- <span class="fn">read.csv</span>(<span class="string">"charities.csv"</span>)
+employment &lt;- <span class="fn">read.csv</span>(<span class="string">"Documents/Regression/RData/employment.csv"</span>)
 
 <span class="comment"># Install ggplot2 package</span>
 <span class="fn">install.packages</span>("ggplot2")
@@ -234,15 +234,18 @@ charities &lt;- <span class="fn">read.csv</span>(<span class="string">"charities
   <div class="step">
     <div class="step-num">2</div>
     <div class="step-content">
-      <h4>Scatterplot: Overall Score vs. Accountability & Transparency Score</h4>
-      <p>Visualize the relationship between OS and ATS to check for outliers and non-linearity before running a correlation.</p>
-      <pre><span class="comment"># Scatterplot: OS vs ATS</span>
-charities_ats_plot &lt;- <span class="fn">ggplot</span>(charities, <span class="fn">aes</span>(x = ATS, y = OS)) +
-        <span class="fn">geom_point</span>(color = "red", alpha = 0.7) +
-        <span class="fn">labs</span>(title = <span class="string">"Relationship Between Overall Score and Accounting &amp; Transparency Score"</span>, x = <span class="string">"Accounting &amp; Transparency Score"</span>, y = <span class="string">"Overall Score"</span>) +
-        <span class="fn">theme_minimal</span>()
-        <span class="fn">print</span>(charities_ats_plot)
+      <h4>Distribution: Labor Force Participation Rate</h4>
+      <p>Visualize the distribution's shape for labor force participation rate through a histogram and summary.</p>
+      <pre><span class="comment"># Summary: CLFPR</span>
+        <span class="fn">summary</span>(employment$CLFPR)
+
+              <span class="comment"># Histogram: CLFPR</span>
+              <span class="fn">hist</span>(employment$CLFPR, 
+     main = <span class="string">"Distribution of Labor Force Participation Rate"</span>,
+     xlab = <span class="string">"Labor Force Participation Rate"</span>,
+     col =<span class="string">"red"</span>)
      </pre>
+     <img src="/images/employment_clfpr_summary.png" alt="Summary of CLFPR" style="width:100%; border-radius:6px; margin-top:0.75rem;">
       <img src="/images/charities_ats_scatterplot.png" alt="Scatterplot of Overall Score vs ATS" style="width:100%; border-radius:6px; margin-top:0.75rem;">
       <p>The graph shows the relationship between the charities’ overall rating and accountability & transparency score. There is no simple curve that gives the points a better fit, meaning that a linear model is appropriate. The graph shows a strong, positive correlation. Thus, charities with relatively high accountability & transparency scores tend to have higher overall ratings as well.
 </p>
