@@ -237,16 +237,15 @@ employment &lt;- <span class="fn">read.csv</span>(<span class="string">"Document
       <h4>Distribution: Labor Force Participation Rate</h4>
       <p>Visualize the distribution's shape for labor force participation rate through a histogram and summary.</p>
       <pre><span class="comment"># Summary: CLFPR</span>
-        <span class="fn">summary</span>(employment$CLFPR)
+<span class="fn">summary</span>(employment$CLFPR)
 
-              <span class="comment"># Histogram: CLFPR</span>
-              <span class="fn">hist</span>(employment$CLFPR, 
-     main = <span class="string">"Distribution of Labor Force Participation Rate"</span>,
-     xlab = <span class="string">"Labor Force Participation Rate"</span>,
-     col =<span class="string">"red"</span>)
-     </pre>
-     <img src="/images/employment_clfpr_summary.png" alt="Summary of CLFPR" style="width:100%; border-radius:6px; margin-top:0.75rem;">
-      <img src="/images/employment_clfpr_histogram.png" alt="Histogram of CLFPR" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+<span class="comment"># Histogram: CLFPR</span>
+<span class="fn">hist</span>(employment$CLFPR, 
+        main = <span class="string">"Distribution of Labor Force Participation Rate"</span>,
+        xlab = <span class="string">"Labor Force Participation Rate"</span>,
+        col =<span class="string">"red"</span>)</pre>
+    <img src="/images/employment_clfpr_summary.png" alt="Summary of CLFPR" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+    <img src="/images/employment_clfpr_histogram.png" alt="Histogram of CLFPR" style="width:100%; border-radius:6px; margin-top:0.75rem;">
       <p>To understand the shape of distribution of the labor force participation rate, the above histogram is analyzed. The shape of the data is relatively symmetric with the mean being around the middle of the minimum and maximum. The dip in the middle suggests that values tended to fall below or above the typical labor force participation rate (64.89%). The mean is also close to the median, which indicates that the data is not very skewed. There are no clear univariate outliers present because all the values lie within a reasonable distance from the center and do not appear isolated from the rest of the distribution.
 </p>
     </div>
@@ -258,16 +257,15 @@ employment &lt;- <span class="fn">read.csv</span>(<span class="string">"Document
       <h4>Distribution: Unemployment Rate</h4>
       <p>Visualize the distribution's shape for unemployment rate through a histogram and summary.</p>
       <pre><span class="comment"># Summary: CUNR</span>
-        <span class="fn">summary</span>(employment$CUNR)
+<span class="fn">summary</span>(employment$CUNR)
 
-              <span class="comment"># Histogram: CUNR</span>
-              <span class="fn">hist</span>(employment$CUNR, 
-     main = <span class="string">"Distribution of Unemployment Rate"</span>,
-     xlab = <span class="string">"Unemployment Rate"</span>,
-     col =<span class="string">"orange"</span>)
-     </pre>
-     <img src="/images/employment_cunr_summary.png" alt="Summary of CUNR" style="width:100%; border-radius:6px; margin-top:0.75rem;">
-      <img src="/images/employment_cunr_histogram.png" alt="Histogram of CUNR" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+<span class="comment"># Histogram: CUNR</span>
+<span class="fn">hist</span>(employment$CUNR, 
+        main = <span class="string">"Distribution of Unemployment Rate"</span>,
+        xlab = <span class="string">"Unemployment Rate"</span>,
+        col =<span class="string">"orange"</span>)</pre>
+    <img src="/images/employment_cunr_summary.png" alt="Summary of CUNR" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+    <img src="/images/employment_cunr_histogram.png" alt="Histogram of CUNR" style="width:100%; border-radius:6px; margin-top:0.75rem;">
       <p>The above histogram shows the distribution of the unemployment rate. The shape of the data appears right-skewed, tapering off gradually on the right compared to the left with most observations clustering between approximately 4% and 7%. The max value is further from the central tendencies compared to the min value, which further indicates that the histogram is skewed. While the 10.4% unemployment rate value is further from the rest of the values, it does not violate the 1.5 x IQR rule, meaning that it is not an univariate outlier.
 </p>
     </div>
@@ -284,14 +282,50 @@ employment_scatterplot &lt;- <span class="fn">ggplot</span>(employment, <span cl
         <span class="fn">geom_point</span>(color = <span class="string">"blue"</span>, alpha = 0.7) +
         <span class="fn">labs</span>(title = <span class="string">"Relationship Between Unemployment Rate and Labor Force Participation Rate"</span>, x = <span class="string">"Unemployment Rate"</span>, y = <span class="string">"Labor Force Participation Rate"</span>) +
         <span class="fn">theme_minimal</span>()
-      <span class="fn">print</span>(employment_scatterplot)
+<span class="fn">print</span>(employment_scatterplot)
 
-        <span class="comment"># Pearson correlation: CLFPR vs CUNR</span>
-<span class="fn">cor.test</span>(employment$CUNR,employment$CLFPR, method = <span class="string">"pearson"</span>)
-      </pre>
-           <img src="/images/employment_clfpr_cunr_scatterplot.png" alt="CLFPR vs CUNR Scatterplot" style="width:100%; border-radius:6px; margin-top:0.75rem;">
-            <img src="/images/employment_clfpr_cunr_correlation_test.png" alt="CLFPR vs CUNR Correlation Test" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+<span class="comment"># Pearson correlation: CLFPR vs CUNR</span>
+<span class="fn">cor.test</span>(employment$CUNR,employment$CLFPR, method = <span class="string">"pearson"</span>)</pre>
+        <img src="/images/employment_clfpr_cunr_scatterplot.png" alt="CLFPR vs CUNR Scatterplot" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+        <img src="/images/employment_clfpr_cunr_correlation_test.png" alt="CLFPR vs CUNR Correlation Test" style="width:100%; border-radius:6px; margin-top:0.75rem;">
       <p>	The following scatterplot shows the relationship between unemployment rate and labor force participation over the span of 1980 to 2025. This initial bivariate analysis does not indicate a strong linear relationship, and the points appear dispersed without a consistent upward or downward trend. Examining the correlation statistics revealed that the model is not statistically significant because the p-value is 0.89, which is greater than 0.05. The variables also appear to not or have little relationship with each other with a r value of -0.02, which has an absolute value less than 0.1. A different approach would have to be taken to predict the relationship.
+</p>
+
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-content">
+      <h4>Bivariate Analysis (Subsets): 1980-2008 vs 2008-2025</h4>
+      <p>Visualize the relationship with a scatterplot and run a correlation analysis on the relationship between CLFPR and CUNR for two different time periods (1980-2008 and 2008-2025).</p>
+      <pre><span class="comment"># Label the years 2008 and before "1980-2008" and the rest "2009-2025"</span>
+employment$period &lt;- <span class="fn">ifelse</span>(employment$Year <= 2008, <span class="string">"1980-2008"</span>, <span class="string">"2009-2025"</span>)
+  
+<span class="comment"># Scatterplot: CLFPR vs CUNR (Time Period Subsets)</span>
+<span class="fn">plot</span>(employment$CUNR, employment$CLFPR,
+        col = <span class="fn">ifelse</span>(employment$period == <span class="string">"1980-2008"</span>, <span class="string">"red"</span>, <span class="string">"blue"</span>),
+        pch = 19,
+        main = <span class="string">"Relationship Between Unemployment Rate and Labor Force Participation Rate"</span>,
+        xlab = <span class="string">"Unemployment Rate"</span>,
+        ylab = <span class="string">"Labor Force Participation Rate"</span>
+<span class="fn">legend</span>(<span class="string">"topright"</span>,
+        legend = <span class="fn">c</span>(<span class="string">"1980-2008"</span>, <span class="string">"2009-2025"</span>),
+        col = <span class="fn">c</span>(<span class="string">"red"</span>, <span class="string">"blue"</span>),
+        pch = 19)
+
+        
+<span class="comment"># Split data into two periods for correlation analysis</span>
+period1 &lt;- <span class="fn">subset</span>(employment, Year <= 2008)
+period2 &lt;- <span class="fn">subset</span>(employment, Year >= 2009)
+
+<span class="comment"># Pearson correlation: CLFPR vs CUNR (Time Period Subsets)</span>
+<span class="fn">cor.test</span>(period1$CUNR, period1$CLFPR)
+<span class="fn">cor.test</span>(period2$CUNR, period2$CLFPR)</pre>
+        <img src="/images/employment_clfpr_cunr_year_subsets_scatterplot.png" alt="CLFPR vs CUNR Subset Scatterplot" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+        <img src="/images/employment_clfpr_cunr_period1_correlation_test.png" alt="CLFPR vs CUNR 1980-2008 Correlation Test" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+        <img src="/images/employment_clfpr_cunr_period2_correlation_test.png" alt="CLFPR vs CUNR 2009-2025 Correlation Test" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+      <p>The above histogram shows the distribution of the unemployment rate. The shape of the data appears right-skewed, tapering off gradually on the right compared to the left with most observations clustering between approximately 4% and 7%. The max value is further from the central tendencies compared to the min value, which further indicates that the histogram is skewed. While the 10.4% unemployment rate value is further from the rest of the values, it does not violate the 1.5 x IQR rule, meaning that it is not an univariate outlier.
 </p>
 
     </div>
