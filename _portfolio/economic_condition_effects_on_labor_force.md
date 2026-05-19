@@ -339,7 +339,7 @@ period2 &lt;- <span class="fn">subset</span>(employment, Year >= 2009)
 <pre><span class="comment"># Regression analysis: CLFPR vs CUNR (1980-2008)</span>
 <span class="fn">summary</span>(<span class="fn">lm</span>(CLFPR ~ CUNR, data = period1))
 
-<pre><span class="comment"># Regression analysis: CLFPR vs CUNR (2009-2025)</span>
+<span class="comment"># Regression analysis: CLFPR vs CUNR (2009-2025)</span>
 <span class="fn">summary</span>(<span class="fn">lm</span>(CLFPR ~ CUNR, data = period2))</pre>
         <img src="/images/employment_reg_analysis_period1.png" alt="Regression Analysis 1980-2008" style="width:100%; border-radius:6px; margin-top:0.75rem;">
         <img src="/images/employment_reg_analysis_period2.png" alt="Regression Analysis 2009-2025" style="width:100%; border-radius:6px; margin-top:0.75rem;">
@@ -378,9 +378,39 @@ period2 &lt;- <span class="fn">subset</span>(employment, Year >= 2009)
      period2$Std_Resid[<span class="fn">abs</span>(period2$Std_Resid) > 2],
      labels = period2$Year[<span class="fn">abs</span>(period2$Std_Resid) > 2],
      pos = 3, cex = 0.8)
+
+
+<span class="comment"># Calculate Cook's Distance and Threshold to Plot on a Scatterplot (1980-2008)</span>
+period1$Cooks &lt- <span class="fn">cooks.distance</span>(period1_model)
+thresh1 &lt- 4 / <span class="fn">nrow</span>(period1)
+
+<span class="fn">plot</span>(period1$Year, period1$Cooks,
+     main = <span class="string">"Cook's Distance: 1980-2008"</span>,
+     xlab = <span class="string">"Year"</span>, ylab = <span class="string">"Cook's Distance"</span>,
+     pch = 16, col = <span class="fn">ifelse</span>(period1$Cooks > thresh1, <span class="string">"red"</span>, <span class="string">"black"</span>))
+<span class="fn">abline</span>(h = thresh1, col = <span class="string">"red"</span>, lty = 2)
+<span class="fn">text</span>(period1$Year[period1$Cooks > thresh1],
+     period1$Cooks[period1$Cooks > thresh1],
+     labels = period1$Year[period1$Cooks > thresh1],
+     pos = 3, cex = 0.8)
+
+<span class="comment"># Calculate Cook's Distance and Threshold to Plot on a Scatterplot (2009-2025)</span>
+period2$Cooks &lt- <span class="fn">cooks.distance</span>(period2_model)
+thresh2 &lt- 4 / <span class="fn">nrow</span>(period2)
+
+<span class="fn">plot</span>(period2$Year, period2$Cooks,
+     main = <span class="string">"Cook's Distance: 2009-2025"</span>,
+     xlab = <span class="string">"Year"</span>, ylab = <span class="string">"Cook's Distance"</span>,
+     pch = 16, col = <span class="fn">ifelse</span>(period2$Cooks > thresh2, <span class="string">"blue"</span>, <span class="string">"black"</span>))
+<span class="fn">abline</span>(h = thresh2, col = <span class="string">"blue"</span>, lty = 2)
+<span class="fn">text</span>(period2$Year[period2$Cooks > thresh2],
+     period2$Cooks[period2$Cooks > thresh2],
+     labels = period2$Year[period2$Cooks > thresh2],
+     pos = 3, cex = 0.8)</pre>
         <img src="/images/employment_std_resid_scatterplot_period1.png" alt="Standardized Residuals from 1980-2008" style="width:100%; border-radius:6px; margin-top:0.75rem;">
         <img src="/images/employment_std_resid_scatterplot_period2.png" alt="Standardized Residuals from 2009-2025" style="width:100%; border-radius:6px; margin-top:0.75rem;">
-
+        <img src="/images/employment_cooks_scatterplot_period1.png" alt="Standardized Residuals from 1980-2008" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+        <img src="/images/employment_cooks_scatterplot_period2.png" alt="Standardized Residuals from 2009-2025" style="width:100%; border-radius:6px; margin-top:0.75rem;">
 
 
 
