@@ -343,7 +343,7 @@ period2 &lt;- <span class="fn">subset</span>(employment, Year >= 2009)
 <span class="fn">summary</span>(<span class="fn">lm</span>(CLFPR ~ CUNR, data = period2))</pre>
         <img src="/images/employment_reg_analysis_period1.png" alt="Regression Analysis 1980-2008" style="width:100%; border-radius:6px; margin-top:0.75rem;">
         <img src="/images/employment_reg_analysis_period2.png" alt="Regression Analysis 2009-2025" style="width:100%; border-radius:6px; margin-top:0.75rem;">
-      <p>The regression equation for 1980-2008 is estimated CLFPR = 69.66 - 0.62 CUNR. The coefficient indicates that for every 1% increase in unemployment rate, the labor force participation rate decreases by 0.62%. The model for this time period is statistically significant because p-value<0.01 is less than 0.05. R2 is 0.63, which indicates that approximately 63% of the variation in labor force participation is explained by unemployment during this period. Meanwhile, the regression equation for 2009-2025 is estimated CLFPR = 61.28 + 0.33 CUNR. The coefficient indicates that for every 1% increase in unemployment rate, the labor force participation rate increases by 0.33%. The model for this time period is statistically significant because p-value<0.01 is less than 0.05. R2 is 0.46, which indicates that approximately 46% of the variation in labor force participation is explained by unemployment during this period.
+      <p>The regression equation for 1980-2008 is estimated CLFPR = 69.66 - 0.62 CUNR. The coefficient indicates that for every 1% increase in unemployment rate, the labor force participation rate decreases by 0.62%. The model for this time period is statistically significant because p-value<0.01 is less than 0.05. R2 is 0.61, which indicates that approximately 61% of the variation in labor force participation is explained by unemployment during this period. Meanwhile, the regression equation for 2009-2025 is estimated CLFPR = 61.28 + 0.33 CUNR. The coefficient indicates that for every 1% increase in unemployment rate, the labor force participation rate increases by 0.33%. The model for this time period is statistically significant because p-value<0.01 is less than 0.05. R2 is 0.46, which indicates that approximately 46% of the variation in labor force participation is explained by unemployment during this period.
 </p>
 
     </div>
@@ -381,8 +381,8 @@ period2 &lt;- <span class="fn">subset</span>(employment, Year >= 2009)
 
 
 <span class="comment"># Calculate Cook's Distance and Threshold to Plot on a Scatterplot (1980-2008)</span>
-period1$Cooks &lt- <span class="fn">cooks.distance</span>(period1_model)
-thresh1 &lt- 4 / <span class="fn">nrow</span>(period1)
+period1$Cooks &lt;- <span class="fn">cooks.distance</span>(period1_model)
+thresh1 &lt;- 4 / <span class="fn">nrow</span>(period1)
 
 <span class="fn">plot</span>(period1$Year, period1$Cooks,
      main = <span class="string">"Cook's Distance: 1980-2008"</span>,
@@ -395,8 +395,8 @@ thresh1 &lt- 4 / <span class="fn">nrow</span>(period1)
      pos = 3, cex = 0.8)
 
 <span class="comment"># Calculate Cook's Distance and Threshold to Plot on a Scatterplot (2009-2025)</span>
-period2$Cooks &lt- <span class="fn">cooks.distance</span>(period2_model)
-thresh2 &lt- 4 / <span class="fn">nrow</span>(period2)
+period2$Cooks &lt;- <span class="fn">cooks.distance</span>(period2_model)
+thresh2 &lt;- 4 / <span class="fn">nrow</span>(period2)
 
 <span class="fn">plot</span>(period2$Year, period2$Cooks,
      main = <span class="string">"Cook's Distance: 2009-2025"</span>,
@@ -411,16 +411,8 @@ thresh2 &lt- 4 / <span class="fn">nrow</span>(period2)
         <img src="/images/employment_std_resid_scatterplot_period2.png" alt="Standardized Residuals from 2009-2025" style="width:100%; border-radius:6px; margin-top:0.75rem;">
         <img src="/images/employment_cooks_scatterplot_period1.png" alt="Standardized Residuals from 1980-2008" style="width:100%; border-radius:6px; margin-top:0.75rem;">
         <img src="/images/employment_cooks_scatterplot_period2.png" alt="Standardized Residuals from 2009-2025" style="width:100%; border-radius:6px; margin-top:0.75rem;">
-
-
-
-<pre><span class="comment"># Regression analysis: CLFPR vs CUNR (2009-2025)</span>
-<span class="fn">summary</span>(<span class="fn">lm</span>(CLFPR ~ CUNR, data = period2))</pre>
-        <img src="/images/employment_reg_analysis_period1.png" alt="Regression Analysis 1980-2008" style="width:100%; border-radius:6px; margin-top:0.75rem;">
-        <img src="/images/employment_reg_analysis_period2.png" alt="Regression Analysis 2009-2025" style="width:100%; border-radius:6px; margin-top:0.75rem;">
-      <p>The regression equation for 1980-2008 is estimated CLFPR = 69.66 - 0.62 CUNR. The coefficient indicates that for every 1% increase in unemployment rate, the labor force participation rate decreases by 0.62%. The model for this time period is statistically significant because p-value<0.01 is less than 0.05. R2 is 0.63, which indicates that approximately 63% of the variation in labor force participation is explained by unemployment during this period. Meanwhile, the regression equation for 2009-2025 is estimated CLFPR = 61.28 + 0.33 CUNR. The coefficient indicates that for every 1% increase in unemployment rate, the labor force participation rate increases by 0.33%. The model for this time period is statistically significant because p-value<0.01 is less than 0.05. R2 is 0.46, which indicates that approximately 46% of the variation in labor force participation is explained by unemployment during this period.
+      <p>The residual analyses have been computed to identify potential outliers. In the 1980-2008 model, standardized residuals greater than |2| were observed in 1980, which indicates that year being a potential bivariate outlier. Cook’s identified 1983 as influential. These were likely due to the recessions in the United States during that time period. Meanwhile, in the 2009-2025 model, standardized residuals greater than |2| were observed in 2009 and 2021, which indicates those years being potential bivariate outliers. Cook’s identified 2009 as influential. The observation made in 2009 is most likely due to the Great Recession. Standardized residuals identify observations with large prediction errors while Cook’s measures overall influence on the regression line. As a result, an observation may have a large residual but not strongly influence the slope and vice versa.
 </p>
-
     </div>
   </div>
 
@@ -432,35 +424,44 @@ thresh2 &lt- 4 / <span class="fn">nrow</span>(period2)
 
 <div class="stats-grid">
   <div class="stat-card">
-    <span class="stat-value">r = 0.707</span>
-    <span class="stat-label">OS × ATS Correlation</span>
+    <span class="stat-value">CLFPR = 69.66 - 0.62 CUNR</span>
+    <span class="stat-label">1980-2008</span>
   </div>
+  
   <div class="stat-card">
-    <span class="stat-value">p &lt; 2.2e-16</span>
-    <span class="stat-label">OS × ATS p-value</span>
+    <span class="stat-value">p &lt; 0.001</span>
+    <span class="stat-label">Statistically Significant</span>
+  <div class="stat-card">
+    <span class="stat-value">R2 = 0.61</span>
+    <span class="stat-label">approximately 61% of the variation in labor force participation is explained by unemployment</span>
   </div>
 </div>
 
 <div class="finding-box">
-  <h4>Overall Score & Accountability / Transparency Score</h4>
-  <p>The correlation statistic and p-value suggest that the relationship between the charities’ overall rating and accountability & transparency score has a strong positive correlation and is statistically significant. The p-value (less than 2.2e-16) is less than 0.05, indicating that the relationship is statistically significant. This means that the correlation is likely not due to random chance. The correlation (r), which is 0.707, is greater than 0.5, which means that there is a strong positive correlation between the two variables. The statistically significant, strongly positive correlation suggests that charities with higher accountability & transparency scores tend to also have higher overall ratings.
+  <h4>1980-2008: Supports Discouraged Worker Effect</h4>
+  <p>From the period of 1980-2008, the discouraged worker effect is supported because higher unemployment rates tended to correspond with lower labor force participation rates.
 </p>
 </div>
 
+
 <div class="stats-grid">
   <div class="stat-card">
-    <span class="stat-value">r = 0.421</span>
-    <span class="stat-label">OS × AF Correlation</span>
+    <span class="stat-value">CLFPR = 61.28 + 0.33 CUNR</span>
+    <span class="stat-label">2009-2025</span>
   </div>
+  
   <div class="stat-card">
-    <span class="stat-value">p = 3.55e-14</span>
-    <span class="stat-label">OS × AF p-value</span>
+    <span class="stat-value">p = 0.003</span>
+    <span class="stat-label">Statistically Significant</span>
+  <div class="stat-card">
+    <span class="stat-value">R2 = 0.42</span>
+    <span class="stat-label">approximately 42% of the variation in labor force participation is explained by unemployment</span>
   </div>
-  </div>
+</div>
 
-<div class="finding-box green">
-  <h4>Overall Score & Audited Financial Statements</h4>
-  <p>The correlation statistic for the relationship between the charities’ overall rating and whether they provided the audited financial statement on their website indicates a statistically significant, moderately positive correlation between the two. The p-value (3.546e-14) is less than 0.05, indicating that the relationship is statistically significant. This means that the correlation is likely not due to random chance. The correlation (r), which is 0.421, is between 0.3 and 0.5, which means that there is a moderate positive correlation between the two variables. The moderately positive, statistically significant correlation between the charities’ overall rating and audited financial statement provision shows that charities that provide an audited financial statement on their website tend to have higher overall scores.
+<div class="finding-box">
+  <h4>2009-2025: Supports Added Worker Effect</h4>
+  <p>From the period of 2009-2025, the added worker effect is supported because higher unemployment rates tended to correspond with higher labor force participation rates.
 </p>
 </div>
 
@@ -468,6 +469,6 @@ thresh2 &lt- 4 / <span class="fn">nrow</span>(period2)
 
 <div class="section-block"><h2>Summary</h2></div>
 
-To sum up the findings, charities perceived to be more transparent with their operations (through their accountability & transparency scores and accessibility of their audited financial statement on their website) tend to have a **higher** overall score as well. Although both are positively correlated, the correlation between the charities’ overall rating and accountability & transparency score is **stronger** than the correlation between their overall rating and whether they provided the financial statements on their website.
+In conclusion, the relationship between unemployment and labor force participation **changed** across the two time periods, each supporting a different theory. No statistically significant linear relationship was found when analyzing over the whole period of 1980-2025. However, after dividing it into two time periods, two different relationships emerged from the variables, with the **earlier** period corresponding to a **negative** correlation while the **later** period corresponded to a **positive** correlation.
 
 ---
