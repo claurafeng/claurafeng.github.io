@@ -422,47 +422,42 @@ thresh2 &lt;- 4 / <span class="fn">nrow</span>(period2)
 
 <div class="section-block"><h2>Results</h2></div>
 
+<div class="stat-card" style="margin-bottom: 1rem;">
+  <span class="stat-value">CLFPR = 69.66 - 0.62 CUNR</span>
+  <span class="stat-label">1980-2008</span>
+</div>
 <div class="stats-grid">
-  <div class="stat-card">
-    <span class="stat-value">CLFPR = 69.66 - 0.62 CUNR</span>
-    <span class="stat-label">1980-2008</span>
-  </div>
-  
   <div class="stat-card">
     <span class="stat-value">p &lt; 0.001</span>
     <span class="stat-label">Statistically Significant</span>
+  </div>
   <div class="stat-card">
-    <span class="stat-value">R2 = 0.61</span>
-    <span class="stat-label">approximately 61% of the variation in labor force participation is explained by unemployment</span>
+    <span class="stat-value">R² = 0.61</span>
+    <span class="stat-label">Approximately 61% of the variation in labor force participation is explained by unemployment</span>
   </div>
 </div>
-
 <div class="finding-box">
   <h4>1980-2008: Supports Discouraged Worker Effect</h4>
-  <p>From the period of 1980-2008, the discouraged worker effect is supported because higher unemployment rates tended to correspond with lower labor force participation rates.
-</p>
+  <p>From the period of 1980-2008, the discouraged worker effect is supported because higher unemployment rates tended to correspond with lower labor force participation rates.</p>
 </div>
 
-
+<div class="stat-card" style="margin-bottom: 1rem; margin-top: 2rem;">
+  <span class="stat-value">CLFPR = 61.28 + 0.33 CUNR</span>
+  <span class="stat-label">2009-2025</span>
+</div>
 <div class="stats-grid">
-  <div class="stat-card">
-    <span class="stat-value">CLFPR = 61.28 + 0.33 CUNR</span>
-    <span class="stat-label">2009-2025</span>
-  </div>
-  
   <div class="stat-card">
     <span class="stat-value">p = 0.003</span>
     <span class="stat-label">Statistically Significant</span>
+  </div>
   <div class="stat-card">
-    <span class="stat-value">R2 = 0.42</span>
-    <span class="stat-label">approximately 42% of the variation in labor force participation is explained by unemployment</span>
+    <span class="stat-value">R² = 0.42</span>
+    <span class="stat-label">Approximately 42% of the variation in labor force participation is explained by unemployment</span>
   </div>
 </div>
-
 <div class="finding-box">
   <h4>2009-2025: Supports Added Worker Effect</h4>
-  <p>From the period of 2009-2025, the added worker effect is supported because higher unemployment rates tended to correspond with higher labor force participation rates.
-</p>
+  <p>From the period of 2009-2025, the added worker effect is supported because higher unemployment rates tended to correspond with higher labor force participation rates.</p>
 </div>
 
 ---
