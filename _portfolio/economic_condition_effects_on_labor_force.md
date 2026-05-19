@@ -291,7 +291,7 @@ employment_scatterplot &lt;- <span class="fn">ggplot</span>(employment, <span cl
       </pre>
            <img src="/images/employment_clfpr_cunr_scatterplot.png" alt="CLFPR vs CUNR Scatterplot" style="width:100%; border-radius:6px; margin-top:0.75rem;">
             <img src="/images/employment_clfpr_cunr_correlation_test.png" alt="CLFPR vs CUNR Correlation Test" style="width:100%; border-radius:6px; margin-top:0.75rem;">
-      <p>The above histogram shows the distribution of the unemployment rate. The shape of the data appears right-skewed, tapering off gradually on the right compared to the left with most observations clustering between approximately 4% and 7%. The max value is further from the central tendencies compared to the min value, which further indicates that the histogram is skewed. While the 10.4% unemployment rate value is further from the rest of the values, it does not violate the 1.5 x IQR rule, meaning that it is not an univariate outlier.
+      <p>	The following scatterplot shows the relationship between unemployment rate and labor force participation over the span of 1980 to 2025. This initial bivariate analysis does not indicate a strong linear relationship, and the points appear dispersed without a consistent upward or downward trend. Examining the correlation statistics revealed that the model is not statistically significant because the p-value is 0.89, which is greater than 0.05. The variables also appear to not or have little relationship with each other with a r value of -0.02, which has an absolute value less than 0.1. A different approach would have to be taken to predict the relationship.
 </p>
 
     </div>
