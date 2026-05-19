@@ -246,7 +246,7 @@ employment &lt;- <span class="fn">read.csv</span>(<span class="string">"Document
      col =<span class="string">"red"</span>)
      </pre>
      <img src="/images/employment_clfpr_summary.png" alt="Summary of CLFPR" style="width:100%; border-radius:6px; margin-top:0.75rem;">
-      <img src="/images/charities_ats_scatterplot.png" alt="Scatterplot of Overall Score vs ATS" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+      <img src="/images/employment_clfpr_histogram.png" alt="Histogram of CLFPR" style="width:100%; border-radius:6px; margin-top:0.75rem;">
       <p>The graph shows the relationship between the charities’ overall rating and accountability & transparency score. There is no simple curve that gives the points a better fit, meaning that a linear model is appropriate. The graph shows a strong, positive correlation. Thus, charities with relatively high accountability & transparency scores tend to have higher overall ratings as well.
 </p>
     </div>
