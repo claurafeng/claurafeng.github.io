@@ -220,7 +220,7 @@ The dataset contains information on **298 charities** from Charity Navigator. Th
     <div class="step-num">1</div>
     <div class="step-content">
       <h4>Import the data</h4>
-      <p>Load the CSV file into RStudio and preview the structure.</p>
+      <p>Load the CSV file into RStudio and install relevant package.</p>
       <pre><span class="comment"># Import data from CSV</span>
 charities &lt;- <span class="fn">read.csv</span>(<span class="string">"charities.csv"</span>)
 
