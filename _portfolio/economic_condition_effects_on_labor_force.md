@@ -247,7 +247,7 @@ employment &lt;- <span class="fn">read.csv</span>(<span class="string">"Document
      </pre>
      <img src="/images/employment_clfpr_summary.png" alt="Summary of CLFPR" style="width:100%; border-radius:6px; margin-top:0.75rem;">
       <img src="/images/employment_clfpr_histogram.png" alt="Histogram of CLFPR" style="width:100%; border-radius:6px; margin-top:0.75rem;">
-      <p>The graph shows the relationship between the charities’ overall rating and accountability & transparency score. There is no simple curve that gives the points a better fit, meaning that a linear model is appropriate. The graph shows a strong, positive correlation. Thus, charities with relatively high accountability & transparency scores tend to have higher overall ratings as well.
+      <p>To understand the shape of distribution of the labor force participation rate, the above histogram is analyzed. The shape of the data is relatively symmetric with the mean being around the middle of the minimum and maximum. The dip in the middle suggests that values tended to fall below or above the typical labor force participation rate (64.89%). The mean is also close to the median, which indicates that the data is not very skewed. There are no clear univariate outliers present because all the values lie within a reasonable distance from the center and do not appear isolated from the rest of the distribution.
 </p>
     </div>
   </div>
