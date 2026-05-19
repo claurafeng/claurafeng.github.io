@@ -277,15 +277,20 @@ employment &lt;- <span class="fn">read.csv</span>(<span class="string">"Document
   <div class="step">
     <div class="step-num">4</div>
     <div class="step-content">
-      <h4>Scatterplot: Labor Force Participation Rate vs Unemployment Rate</h4>
+      <h4>Correlation test: Labor Force Participation Rate and Unemployment Rate</h4>
       <p>Visualize the relationship between CLFPR and CUNR using a scatterplot.</p>
       <pre><span class="comment"># Scatterplot: CLFPR vs CUNR</span>
 employment_scatterplot &lt;- <span class="fn">ggplot</span>(employment, <span class="fn">aes</span>(x = CUNR, y = CLFPR)) +
         <span class="fn">geom_point</span>(color = <span class="string">"blue"</span>, alpha = 0.7) +
         <span class="fn">labs</span>(title = <span class="string">"Relationship Between Unemployment Rate and Labor Force Participation Rate"</span>, x = <span class="string">"Unemployment Rate"</span>, y = <span class="string">"Labor Force Participation Rate"</span>) +
         <span class="fn">theme_minimal</span>()
-      <span class="fn">print</span>(employment_scatterplot)</pre>
+      <span class="fn">print</span>(employment_scatterplot)
+
+        <span class="comment"># Pearson correlation: CLFPR vs CUNR</span>
+<span class="fn">cor.test</span>(employment$CUNR,employment$CLFPR, method = <span class="string">"pearson"</span>)
+      </pre>
            <img src="/images/employment_clfpr_cunr_scatterplot.png" alt="CLFPR vs CUNR Scatterplot" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+            <img src="/images/employment_clfpr_cunr_correlation_test.png" alt="CLFPR vs CUNR Correlation Test" style="width:100%; border-radius:6px; margin-top:0.75rem;">
       <p>The above histogram shows the distribution of the unemployment rate. The shape of the data appears right-skewed, tapering off gradually on the right compared to the left with most observations clustering between approximately 4% and 7%. The max value is further from the central tendencies compared to the min value, which further indicates that the histogram is skewed. While the 10.4% unemployment rate value is further from the rest of the values, it does not violate the 1.5 x IQR rule, meaning that it is not an univariate outlier.
 </p>
 
