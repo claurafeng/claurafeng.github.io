@@ -255,25 +255,24 @@ employment &lt;- <span class="fn">read.csv</span>(<span class="string">"Document
   <div class="step">
     <div class="step-num">3</div>
     <div class="step-content">
-      <h4>Scatterplot: Overall Score vs. Audited Financial Statements</h4>
-      <p>For the binary AF variable, the x-axis labels are converted from 0/1 to "No"/"Yes" for clarity.</p>
-      <pre><span class="comment"># Convert AF to a labeled factor</span>
-charities$AF_label &lt;- <span class="fn">factor</span>(charities$AF,
-                            levels = <span class="fn">c</span>(0, 1),
-                            labels = <span class="fn">c</span>(<span class="string">"No"</span>, <span class="string">"Yes"</span>))
+      <h4>Distribution: Unemployment Rate</h4>
+      <p>Visualize the distribution's shape for unemployment rate through a histogram and summary.</p>
+      <pre><span class="comment"># Summary: CUNR</span>
+        <span class="fn">summary</span>(employment$CUNR)
 
-<span class="comment"># Scatterplot: OS vs AF with labeled axis</span>
-charities_af_plot &lt;- <span class="fn">ggplot</span>(charities, <span class="fn">aes</span>(x = AF_label, y = OS)) +
-<span class="fn">geom_point</span>(color = "blue", alpha = 0.7) +
-<span class="fn">labs</span>(title = <span class="string">"Relationship Between Overall Score and Audited Financial Statement Provision"</span>, x = <span class="string">"Audited Financial Statement Provision"</span>, y = <span class="string">"Overall Score"</span>) +
-<span class="fn">theme_minimal</span>()
-<span class="fn">print</span>(charities_af_plot)     
-</pre>
-      <img src="/images/charities_af_plot.png" alt="Scatterplot of Overall Score vs AF" style="width:100%; border-radius:6px; margin-top:0.75rem;">
-      <p>The graph shows the relationship between the charities’ overall rating and whether they provided the audited financial statement on their website. Since no simple curves can be discerned from the scatterplot, a linear model is appropriate. The center of the line representing charities that provide audited financial statements on their websites seems to be higher than the center of the line of charities that do not provide them. This moderately indicates that charities with audited financial statements accessible on their website tend to have higher overall ratings as well, suggesting a positive correlation between the two.
+              <span class="comment"># Histogram: CUNR</span>
+              <span class="fn">hist</span>(employment$CUNR, 
+     main = <span class="string">"Distribution of Unemployment Rate"</span>,
+     xlab = <span class="string">"Unemployment Rate"</span>,
+     col =<span class="string">"orange"</span>)
+     </pre>
+     <img src="/images/employment_cunr_summary.png" alt="Summary of CUNR" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+      <img src="/images/employment_cunr_histogram.png" alt="Histogram of CUNR" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+      <p>To understand the shape of distribution of the labor force participation rate, the above histogram is analyzed. The shape of the data is relatively symmetric with the mean being around the middle of the minimum and maximum. The dip in the middle suggests that values tended to fall below or above the typical labor force participation rate (64.89%). The mean is also close to the median, which indicates that the data is not very skewed. There are no clear univariate outliers present because all the values lie within a reasonable distance from the center and do not appear isolated from the rest of the distribution.
 </p>
     </div>
   </div>
+
 
   <div class="step">
     <div class="step-num">4</div>
