@@ -373,7 +373,7 @@ period2 &lt;- <span class="fn">subset</span>(employment, Year >= 2009)
      xlab = <span class="string">"CUNR"</span>, ylab = <span class="string">"Standardized Residuals"</span>,
      pch = 16, col = <span class="fn">ifelse</span>(<span class="fn">abs</span>(period2$Std_Resid) > 2, <span class="string">"blue"</span>, <span class="string">"black"</span>))
 <span class="fn">abline</span>(h = 0, col = <span class="string">"gray"</span>, lty = 2)
-<span class="fn">abline</span>(h = <span class="fn"c</span>(-2, 2), col = <span class="string">"blue"</span>, lty = 3)
+<span class="fn">abline</span>(h = <span class="fn">c</span>(-2, 2), col = <span class="string">"blue"</span>, lty = 3)
 <span class="fn">text</span>(period2$CUNR[<span class="fn">abs</span>(period2$Std_Resid) > 2],
      period2$Std_Resid[<span class="fn">abs</span>(period2$Std_Resid) > 2],
      labels = period2$Year[<span class="fn">abs</span>(period2$Std_Resid) > 2],
