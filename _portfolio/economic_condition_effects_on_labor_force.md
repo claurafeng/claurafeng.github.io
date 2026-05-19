@@ -297,7 +297,7 @@ employment_scatterplot &lt;- <span class="fn">ggplot</span>(employment, <span cl
   <div class="step">
     <div class="step-num">5</div>
     <div class="step-content">
-      <h4>Bivariate Analysis (Subsets): 1980-2008 vs 2008-2025</h4>
+      <h4>Bivariate Analysis (1980-2008 and 2008-2025 Subsets): CLFPR vs CUNR</h4>
       <p>Visualize the relationship with a scatterplot and run a correlation analysis on the relationship between CLFPR and CUNR for two different time periods (1980-2008 and 2008-2025).</p>
       <pre><span class="comment"># Label the years 2008 and before "1980-2008" and the rest "2009-2025"</span>
 employment$period &lt;- <span class="fn">ifelse</span>(employment$Year <= 2008, <span class="string">"1980-2008"</span>, <span class="string">"2009-2025"</span>)
@@ -325,22 +325,25 @@ period2 &lt;- <span class="fn">subset</span>(employment, Year >= 2009)
         <img src="/images/employment_clfpr_cunr_year_subsets_scatterplot.png" alt="CLFPR vs CUNR Subset Scatterplot" style="width:100%; border-radius:6px; margin-top:0.75rem;">
         <img src="/images/employment_clfpr_cunr_period1_correlation_test.png" alt="CLFPR vs CUNR 1980-2008 Correlation Test" style="width:100%; border-radius:6px; margin-top:0.75rem;">
         <img src="/images/employment_clfpr_cunr_period2_correlation_test.png" alt="CLFPR vs CUNR 2009-2025 Correlation Test" style="width:100%; border-radius:6px; margin-top:0.75rem;">
-      <p>The above histogram shows the distribution of the unemployment rate. The shape of the data appears right-skewed, tapering off gradually on the right compared to the left with most observations clustering between approximately 4% and 7%. The max value is further from the central tendencies compared to the min value, which further indicates that the histogram is skewed. While the 10.4% unemployment rate value is further from the rest of the values, it does not violate the 1.5 x IQR rule, meaning that it is not an univariate outlier.
+      <p>The full time period for the data is split into two different time periods: 1980-2008 and 2008-2025. Unlike with the full time period, having two different periods allows for predictive analyses. The separated graphs do not have simple curves that can fit the values better than a line, implying a linear relationship. The spread of points is also roughly constant across the values, implying homoscedasticity. There are also no extreme outliers apparent in the graph. The correlation analyses of the two lines also indicate appropriateness for regression. The correlation analysis for 1980-2008 indicates that the model is statistically significant with p-value<0.01, which is less than 0.05, and the variables have a strong relationship with the absolute value of r being 0.79, which is greater than 0.5. Meanwhile, 2009-2025 has p-value<0.01, indicating statistical significance too as it’s less than 0.05. It has a r value of 0.68, which also indicates a strong relationship between variables.
 </p>
 
     </div>
   </div>
 
   <div class="step">
-    <div class="step-num">5</div>
+    <div class="step-num">6</div>
     <div class="step-content">
-      <h4>Correlation test: OS and AF</h4>
-      <p>Run a Pearson correlation to get the r statistic and p-value for the OS–AF relationship.</p>
-      <pre><span class="comment"># Pearson correlation: OS vs AF</span>
-<span class="fn">cor.test</span>(charities$OS, charities$AF, method = <span class="string">"pearson"</span>)</pre>
-           <img src="/images/employment_cunr_summary.png" alt="Summary of CUNR" style="width:100%; border-radius:6px; margin-top:0.75rem;">
-      <img src="/images/employment_cunr_histogram.png" alt="Histogram of CUNR" style="width:100%; border-radius:6px; margin-top:0.75rem;">
-      <p>The above histogram shows the distribution of the unemployment rate. The shape of the data appears right-skewed, tapering off gradually on the right compared to the left with most observations clustering between approximately 4% and 7%. The max value is further from the central tendencies compared to the min value, which further indicates that the histogram is skewed. While the 10.4% unemployment rate value is further from the rest of the values, it does not violate the 1.5 x IQR rule, meaning that it is not an univariate outlier.
+      <h4>Regression Analysis (1980-2008 and 2008-2025 Subsets): CLFPR vs CUNR</h4>
+      <p>Run regression analyses for the two time periods to show how the unemployment rate can be used to predict the labor force participation rate in the two different time periods.</p>
+<pre><span class="comment"># Regression analysis: CLFPR vs CUNR (1980-2008)</span>
+<span class="fn">summary</span>(<span class="fn">lm</span>(CLFPR ~ CUNR, data = period1))
+
+<pre><span class="comment"># Regression analysis: CLFPR vs CUNR (2009-2025)</span>
+<span class="fn">summary</span>(<span class="fn">lm</span>(CLFPR ~ CUNR, data = period2))</pre>
+        <img src="/images/employment_reg_analysis_period1.png" alt="Regression Analysis 1980-2008" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+        <img src="/images/employment_reg_analysis_period2.png" alt="Regression Analysis 2009-2025" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+      <p>The regression equation for 1980-2008 is estimated CLFPR = 69.66 - 0.62 CUNR. The coefficient indicates that for every 1% increase in unemployment rate, the labor force participation rate decreases by 0.62%. The model for this time period is statistically significant because p-value<0.01 is less than 0.05. R2 is 0.63, which indicates that approximately 63% of the variation in labor force participation is explained by unemployment during this period. Meanwhile, the regression equation for 2009-2025 is estimated CLFPR = 61.28 + 0.33 CUNR. The coefficient indicates that for every 1% increase in unemployment rate, the labor force participation rate increases by 0.33%. The model for this time period is statistically significant because p-value<0.01 is less than 0.05. R2 is 0.46, which indicates that approximately 46% of the variation in labor force participation is explained by unemployment during this period.
 </p>
 
     </div>
