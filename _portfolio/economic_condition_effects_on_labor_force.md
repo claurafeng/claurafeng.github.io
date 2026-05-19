@@ -349,6 +349,51 @@ period2 &lt;- <span class="fn">subset</span>(employment, Year >= 2009)
     </div>
   </div>
 
+  <div class="step">
+    <div class="step-num">7</div>
+    <div class="step-content">
+      <h4>Residual Analysis (1980-2008 and 2009-2025 Subsets): CLFPR vs CUNR</h4>
+      <p>Run residual analyses for the two time periods to identify potential outliers.</p>
+<pre><span class="comment"># Standardized Residual analysis: 1980-2008</span>
+<span class="fn">summary</span>(<span class="fn">lm</span>(CLFPR ~ CUNR, data = period1))
+<span class="fn">plot</span>(period1$CUNR, period1$Std_Resid,
+     main = <span class="string">"Standardized Residuals: 1980-2008"</span>,
+     xlab = <span class="string">"CUNR"</span>, ylab = <span class="string">"Standardized Residuals"</span>,
+     pch = 16, col = <span class="fn">ifelse</span>(<span class="fn">abs</span>(period1$Std_Resid) > 2, <span class="string">"red"</span>, <span class="string">"black"</span>))
+<span class="fn">abline</span>(h = 0, col = <span class="string">"gray"</span>, lty = 2)
+<span class="fn">abline</span>(h = <span class="fn">c</span>(-2, 2), col = <span class="string">"red"</span>, lty = 3)
+<span class="fn">text(period1$CUNR[abs(period1$Std_Resid) > 2],
+     period1$Std_Resid[<span class="fn">abs</span>(period1$Std_Resid) > 2],
+     labels = period1$Year[<span class="fn">abs</span>(period1$Std_Resid) > 2],
+     pos = 3, cex = 0.8)
+
+<span class="comment"># Standardized Residual analysis: 2009-2025</span>
+<span class="fn">plot</span>(period2$CUNR, period2$Std_Resid,
+     main = <span class="string">"Standardized Residuals: 2009-2025"</span>,
+     xlab = <span class="string">"CUNR"</span>, ylab = <span class="string">"Standardized Residuals"</span>,
+     pch = 16, col = <span class="fn">ifelse</span>(<span class="fn">abs</span>(period2$Std_Resid) > 2, <span class="string">"blue"</span>, <span class="string">"black"</span>))
+<span class="fn">abline</span>(h = 0, col = <span class="string">"gray"</span>, lty = 2)
+<span class="fn">abline</span>(h = <span class="fn"c</span>(-2, 2), col = <span class="string">"blue"</span>, lty = 3)
+<span class="fn">text</span>(period2$CUNR[<span class="fn">abs</span>(period2$Std_Resid) > 2],
+     period2$Std_Resid[<span class="fn">abs</span>(period2$Std_Resid) > 2],
+     labels = period2$Year[<span class="fn">abs</span>(period2$Std_Resid) > 2],
+     pos = 3, cex = 0.8)
+        <img src="/images/employment_std_resid_scatterplot_period1.png" alt="Standardized Residuals from 1980-2008" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+        <img src="/images/employment_std_resid_scatterplot_period2.png" alt="Standardized Residuals from 2009-2025" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+
+
+
+
+<pre><span class="comment"># Regression analysis: CLFPR vs CUNR (2009-2025)</span>
+<span class="fn">summary</span>(<span class="fn">lm</span>(CLFPR ~ CUNR, data = period2))</pre>
+        <img src="/images/employment_reg_analysis_period1.png" alt="Regression Analysis 1980-2008" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+        <img src="/images/employment_reg_analysis_period2.png" alt="Regression Analysis 2009-2025" style="width:100%; border-radius:6px; margin-top:0.75rem;">
+      <p>The regression equation for 1980-2008 is estimated CLFPR = 69.66 - 0.62 CUNR. The coefficient indicates that for every 1% increase in unemployment rate, the labor force participation rate decreases by 0.62%. The model for this time period is statistically significant because p-value<0.01 is less than 0.05. R2 is 0.63, which indicates that approximately 63% of the variation in labor force participation is explained by unemployment during this period. Meanwhile, the regression equation for 2009-2025 is estimated CLFPR = 61.28 + 0.33 CUNR. The coefficient indicates that for every 1% increase in unemployment rate, the labor force participation rate increases by 0.33%. The model for this time period is statistically significant because p-value<0.01 is less than 0.05. R2 is 0.46, which indicates that approximately 46% of the variation in labor force participation is explained by unemployment during this period.
+</p>
+
+    </div>
+  </div>
+
 </div>
 
 ---
