@@ -9,10 +9,12 @@ redirect_from:
 
 {% include base_path %}
 
+
 Education
 ======
 * B.S. in Business, Concentrations in Computing & Data Science and Management & Organizations, New York University, 2028 (expected)
 * High School Diploma at Townsend Harris High School, 2024
+
 
 Work experience
 ======
