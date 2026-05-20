@@ -59,5 +59,7 @@ Skills
 
 Service and leadership
 ======
+* Commuter Media Assistant, New York University, Commuter Life (2026-2027)
+* NYU Welcome Leader, New York University, Center for Student Life (2025)
 * Captain, Townsend Harris High School Varsity Track Team (2023-2024)
 * Patrol Leader, Girl Scouts of Greater New York (2022-2023)
