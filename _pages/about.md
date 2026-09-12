@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Rising Junior studying at New York University Stern School of Business with concentrations in Computing & Data Science and Management & Organizations.
+Junior studying at New York University Stern School of Business with concentrations in Computing & Data Science and Management & Organizations.
 
 
 About Me
