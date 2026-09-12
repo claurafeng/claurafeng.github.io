@@ -103,13 +103,26 @@ redirect_from:
 
   <div class="cv-item">
     <div class="cv-item-header">
+      <p class="cv-item-title">Marketing Strategy Consultant</p>
+      <span class="cv-item-date">Jun 2026 – Present</span>
+    </div>
+    <p class="cv-item-subtitle">Smart Health TCM</p>
+    <ul>
+      <li>Mobilized a team of 4 to develop workshops and outreaches by tailoring assignments to member’s strengths and creating a system to ensure projects are on track, resulting in 70+ outreaches per week with a 29.5% response rate and daily reports.</li>
+      <li>Recommended ideas and pricing strategies to engage with customers by interacting with them directly to identify their interests, increasing event and workshop attendance from 7 to 15 and transforming 33.3% of participants into returning clients.</li>
+      <li>Enhanced website’s relevance after diagnosing problems with SEO and scattered formatting by spearheading changes to the website design and backend, increasing total unique website visitors by 479 (+1,451.5%) and average time spent on a page by 1 minute & 22 seconds (+170.5%).</li>
+    </ul>
+  </div>
+  
+  <div class="cv-item">
+    <div class="cv-item-header">
       <p class="cv-item-title">Co-Founder</p>
       <span class="cv-item-date">Sep 2025 – Present</span>
     </div>
     <p class="cv-item-subtitle">Stroll (In Development)</p>
     <ul>
-      <li>Conducted user and market research to develop a personalized recommendation system using demographic and behavioral data, applying clustering analysis and real-time feedback models to identify patterns and improve recommendation accuracy.</li>
-      <li>Implemented an epsilon-greedy recommendation algorithm that dynamically balances exploration and exploitation while updating user preferences through ongoing interaction analysis.</li>
+      <li>Engineered personalized recommendation system as Co-Founder of 3-person team, applying clustering and real-time feedback models using Python, HTML, and NoSQL to demographic and behavioral data to improve accuracy by 90% across MVP build.</li>
+      <li>Developed epsilon-greedy recommendation algorithm HTML to dynamically recommend diversity and relevance, surfacing 100% more novel recommendations depending on preference while sustaining engagement baseline.</li>
     </ul>
   </div>
 
@@ -120,9 +133,8 @@ redirect_from:
     </div>
     <p class="cv-item-subtitle">Korgi</p>
     <ul>
-      <li>Identified 5+ prospective partner companies that would derive strategic value from Korgi's offerings through market research, industry analysis, and evaluation of organizational needs and positioning.</li>
-      <li>Conducted investigative research across 20+ company websites, LinkedIn activity, and social media content to identify operational pain points, business priorities, and opportunities.</li>
-      <li>Researched and identified 10+ high-value go-to-market contacts across target organizations, supporting strategic outreach efforts and relationship development initiatives.</li>
+      <li>Analyzed 60+ target companies across cloud solutions verticals, conducting market research through digital channels and AI-assisted research tools to identify pain points, informing 8 partner outreaches and accelerating go-to-market execution by 3 weeks.</li>
+      <li>Mapped 30 decision-maker contacts across target organizations and built a prioritized outreach list that directly initiated 25 strategic business development conversations, advancing 6 to next-stage engagement.</li>
     </ul>
   </div>
 
@@ -145,8 +157,8 @@ redirect_from:
     </div>
     <p class="cv-item-subtitle">Blackmont Consulting</p>
     <ul>
-      <li>Conducted targeted lead and market research to identify 10+ prospective clients per month and support business development strategy through structured outreach and relationship management.</li>
-      <li>Assessed client needs and engagement priorities, contributing to consistent acquisition of 1+ new consulting projects per month by analyzing data from outreach tracking initiatives.</li>
+      <li>Sourced 10+ high-value prospective clients monthly via targeted lead research and market analysis, expanding the organization’s pro-bono reach to underserved communities across 5 sectors.</li>
+      <li>Evaluated critical client needs and engagement priorities through targeted stakeholder research and communication, securing 1+ new monthly consulting contracts and expanding the organization’s portfolio within the nonprofit space.</li>
     </ul>
   </div>
 
